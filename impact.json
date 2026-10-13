@@ -1,0 +1,70 @@
+{
+ "summary": [
+  {
+   "commodity": "Soybean",
+   "naive_rows": 155,
+   "naive_mean": 4225.78341394425,
+   "naive_max": 42929.10525817773,
+   "clean_rows": 200,
+   "clean_mean": 4462.635832615747,
+   "clean_max": 5851.052001671127,
+   "true_rows": 200,
+   "true_mean": 4444.30685,
+   "true_max": 4918.89
+  },
+  {
+   "commodity": "Onion",
+   "naive_rows": 158,
+   "naive_mean": 1837.4534071749663,
+   "naive_max": 19444.95772675892,
+   "clean_rows": 208,
+   "clean_mean": 1826.2832326721582,
+   "clean_max": 2745.1315663020605,
+   "true_rows": 208,
+   "true_mean": 1816.8549999999998,
+   "true_max": 2033.43
+  },
+  {
+   "commodity": "Wheat",
+   "naive_rows": 155,
+   "naive_mean": 2358.6354663927405,
+   "naive_max": 3407.1141033649537,
+   "clean_rows": 201,
+   "clean_mean": 2533.2792649870375,
+   "clean_max": 3407.1141033649537,
+   "true_rows": 201,
+   "true_mean": 2529.5459701492537,
+   "true_max": 2784.81
+  }
+ ],
+ "price_methods": {
+  "Overall mean (all crops pooled)": 37.88672823909648,
+  "Crop mean": 4.8633947757435525,
+  "Crop + market median": 3.31949378614195,
+  "Time interpolation (used)": 2.010846873740549,
+  "n": 31
+ },
+ "arrival_methods": {
+  "Overall mean (all crops pooled)": 40.22961551969046,
+  "Crop mean": 13.24847983672581,
+  "Crop + market median (used)": 13.453423249905958,
+  "n": 89
+ },
+ "corr": {
+  "Soybean": {
+   "naive": -0.06749935556187812,
+   "clean": -0.49629545287609017,
+   "true": -0.6363495823200226
+  },
+  "Onion": {
+   "naive": -0.034298026894655415,
+   "clean": -0.4063447175121876,
+   "true": -0.504206657301433
+  },
+  "Wheat": {
+   "naive": -0.08067519868462956,
+   "clean": -0.4375868589600711,
+   "true": -0.5381145257993857
+  }
+ }
+}

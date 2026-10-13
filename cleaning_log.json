@@ -1,0 +1,155 @@
+{
+ "steps": [
+  {
+   "step": "Placeholder to NaN",
+   "changed": 139
+  },
+  {
+   "step": "Remove exact duplicates",
+   "changed": 21,
+   "rows_after": 609
+  },
+  {
+   "step": "Standardise commodity",
+   "changed": 158,
+   "unmatched": 0,
+   "distinct_before": 14,
+   "distinct_after": 3
+  },
+  {
+   "step": "Standardise market",
+   "changed": 104,
+   "unmatched": 0,
+   "distinct_before": 12,
+   "distinct_after": 4
+  },
+  {
+   "step": "Parse dates",
+   "unparsed": 0,
+   "min": "2025-10-01",
+   "max": "2025-11-30"
+  },
+  {
+   "step": "Convert Rs/Kg to Rs/Quintal",
+   "changed": 36
+  },
+  {
+   "step": "Negative arrivals to NaN",
+   "changed": 4
+  },
+  {
+   "step": "Swap min/max when min > max",
+   "changed": 9
+  },
+  {
+   "step": "Detect outliers (robust z > 3.5)",
+   "flagged": 13,
+   "typos_set_to_NaN": 7,
+   "plausible_spikes_kept": 6
+  },
+  {
+   "step": "Modal outside [min,max] (flagged)",
+   "flagged": 6
+  },
+  {
+   "step": "Impute modal_price (time interpolation)",
+   "imputed": 31
+  },
+  {
+   "step": "Impute min/max (ratio to modal)",
+   "imputed": 24
+  },
+  {
+   "step": "Impute arrivals (group median)",
+   "imputed": 89
+  }
+ ],
+ "raw_sha256": "78e41b5e3b7a35c4",
+ "raw_rows": 630,
+ "missing_before": {
+  "min_price": 12,
+  "max_price": 12,
+  "modal_price": 26,
+  "arrivals_tonnes": 89
+ },
+ "duplicates_before": 21,
+ "variants_before": {
+  "commodity": 14,
+  "market": 12,
+  "unit": 4,
+  "date_formats": 3
+ },
+ "outlier_examples": [
+  {
+   "date": "2025-10-24",
+   "market": "Nagpur",
+   "commodity": "Onion",
+   "modal_price": "188.4",
+   "ratio_to_median": "0.1"
+  },
+  {
+   "date": "2025-11-14",
+   "market": "Nagpur",
+   "commodity": "Onion",
+   "modal_price": "176.2",
+   "ratio_to_median": "0.1"
+  },
+  {
+   "date": "2025-10-21",
+   "market": "Pune",
+   "commodity": "Onion",
+   "modal_price": "19445.0",
+   "ratio_to_median": "10.3"
+  },
+  {
+   "date": "2025-10-28",
+   "market": "Lasalgaon",
+   "commodity": "Soybean",
+   "modal_price": "42929.1",
+   "ratio_to_median": "10.0"
+  }
+ ],
+ "spike_examples": [
+  {
+   "date": "2025-11-19",
+   "market": "Lasalgaon",
+   "commodity": "Onion",
+   "modal_price": "2352.66",
+   "ratio_to_median": "1.34"
+  },
+  {
+   "date": "2025-10-07",
+   "market": "Latur",
+   "commodity": "Onion",
+   "modal_price": "2566.6",
+   "ratio_to_median": "1.43"
+  },
+  {
+   "date": "2025-10-15",
+   "market": "Pune",
+   "commodity": "Onion",
+   "modal_price": "2745.13",
+   "ratio_to_median": "1.45"
+  }
+ ],
+ "validation": {
+  "no_duplicate_keys": true,
+  "no_missing_in_core_cols": true,
+  "min<=max_everywhere": true,
+  "all_prices_positive": true,
+  "only_3_commodities_4_markets": true,
+  "single_unit": true
+ },
+ "missing_remaining": 0,
+ "clean_rows": 609,
+ "eval": {
+  "modal_price_imputed_n": 31,
+  "modal_price_MAE": 62.40353296650215,
+  "modal_price_MAPE_pct": 2.0108468737405474,
+  "arrivals_imputed_n": 89,
+  "arrivals_MAE": 34.326401034459494,
+  "arrivals_MAPE_pct": 13.453423249905958,
+  "clean_rows": 609,
+  "truth_rows": 609
+ }
+}

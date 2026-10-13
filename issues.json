@@ -1,0 +1,1 @@
+{"Negative arrivals": 4, "Plausible price spikes": 6, "Typo outliers (10\u00d7 / 0.1\u00d7)": 7, "min > max price": 9, "Exact duplicate rows": 21, "Wrong unit (Rs/Kg)": 36, "Inconsistent market spelling": 104, "Missing values (placeholders)": 139, "Inconsistent commodity spelling": 158, "Non-ISO date format": 277}
