@@ -1,13 +1,10 @@
-# Agribusiness Data Analysis
+# Week 3: EDA on the cleaned hypothetical mandi dataset
 
-**Week 1:** `Week1.docx` (planning document)
-**Week 2:** `Week2_Data_Cleaning_Strategy.docx` (strategy document, submitted)
+The data are SYNTHETIC (generated and cleaned in Week 2). eda.py reads data/clean_mandi_prices.csv and writes
+every number (data/eda.json) and chart (figs/) used in the Week 3 document.
 
-## Week 2 file guide
-- **Code (run in this order):** make_raw_data.py, clean_pipeline.py, impact_analysis.py, make_figs.py
-- **Data:** raw_mandi_prices.csv (raw, synthetic), clean_mandi_prices.csv (cleaned), ground_truth_clean.csv (answer key)
-- **Logs and results:** cleaning_log.json, impact.json, issues.json, examples.json
-- **Charts:** fig_workflow.png, fig_issues.png, fig_before_after.png, fig_imputation.png
-- **Setup:** requirements.txt
+    pip install -r requirements.txt
+    python eda.py
 
-The dataset is hypothetical (synthetic), created for this exercise. i asked wheer the hell i had to write this
+Order of analysis in eda.py: descriptive statistics, regional comparison (price index + ANOVA), weekly trend,
+correlations (Pearson, Spearman, pooled vs within-crop), anomaly screen (robust z-score), weekday check, charts.
